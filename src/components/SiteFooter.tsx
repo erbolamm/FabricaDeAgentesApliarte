@@ -40,17 +40,17 @@ export const SiteFooter = () => {
           </h4>
           <ul className="space-y-2 text-xs text-muted-foreground">
             <li>
-              <a href="/#beneficios" className="hover:text-foreground">
+              <a href="#beneficios" className="hover:text-foreground">
                 Beneficios
               </a>
             </li>
             <li>
-              <a href="/#como-funciona" className="hover:text-foreground">
+              <a href="#como-funciona" className="hover:text-foreground">
                 Cómo Funciona
               </a>
             </li>
             <li>
-              <a href="/#roadmap" className="hover:text-foreground">
+              <a href="#roadmap" className="hover:text-foreground">
                 Roadmap
               </a>
             </li>

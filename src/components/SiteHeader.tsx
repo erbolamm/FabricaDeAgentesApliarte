@@ -35,17 +35,17 @@ export const SiteHeader = () => {
             </NavLink>
           </li>
           <li>
-            <a href="/#beneficios" className="hover:text-foreground transition-colors">
+            <a href="#beneficios" className="hover:text-foreground transition-colors">
               Beneficios
             </a>
           </li>
           <li>
-            <a href="/#como-funciona" className="hover:text-foreground transition-colors">
+            <a href="#como-funciona" className="hover:text-foreground transition-colors">
               Cómo Funciona
             </a>
           </li>
           <li>
-            <a href="/#roadmap" className="hover:text-foreground transition-colors">
+            <a href="#roadmap" className="hover:text-foreground transition-colors">
               Roadmap
             </a>
           </li>

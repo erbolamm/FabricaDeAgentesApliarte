@@ -75,15 +75,26 @@ pnpm lint        # Linter con ESLint
 
 ---
 
-## ☕ Apoyo al Proyecto
+## ☕ Apoyo al Proyecto & Mecenazgo Comunitario
 
-Si esta herramienta o sus prompts te ahorran tiempo en tu día a día, puedes apoyar su desarrollo libre y comunitario:
+> *"Yo pongo las horas de investigación y código abierto; vos te llevás los resultados. Si estos 34 prompts te ahorran aunque sea 1 hora de trabajo esta semana, tu apoyo permite que este catálogo siga creciendo sin paywalls."*
 
+### 👑 Tiers de Apoyo (RevenueCat & GitHub Sponsors):
+- ☕ **Tier 1: Impulso Café (3 € / Pago único)**: Un café para el taller de Javier que financia nuevas investigaciones.
+- 🚀 **Tier 2: Co-Creador IA (5 € / mes)**: Voz y voto mensual para proponer y priorizar los nuevos prompts del catálogo.
+- 👑 **Tier 3: Mecenas Fundador / Legacy Supporter (15 € / mes)**: Nombre y avatar grabados en este README de por vida y nodo de honor en el grafo 3D del **Universo ErBolamm**.
+
+### 🌟 Canales Oficiales:
 - 💖 **RevenueCat Web**: Apoya directamente desde la app en `/apoyar`
 - 🐙 **GitHub Sponsors**: [Sponsor @erbolamm](https://github.com/sponsors/erbolamm)
 - ☕ **Ko-fi**: [ko-fi.com/C0C11TWR1K](https://ko-fi.com/C0C11TWR1K)
 - 💳 **PayPal**: [paypal.me/erbolamm](https://paypal.me/erbolamm)
 - 🟣 **Twitch Tips**: [streamelements.com/apliarte/tip](https://streamelements.com/apliarte/tip)
+
+### 🏆 Mecenas Fundadores (Legacy Supporters):
+| Mecenas | Nivel | Fecha | Enlace |
+|---|---|---|---|
+| *Sé el primer Mecenas Fundador* | 👑 Legacy Sponsor | 2026 | [Unirme](https://github.com/sponsors/erbolamm) |
 
 ---
 

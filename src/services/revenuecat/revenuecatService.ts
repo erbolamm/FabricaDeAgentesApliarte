@@ -6,52 +6,52 @@ const REVENUECAT_STORAGE_KEY = "crafty_supporter_status_v1";
 export const SUPPORT_TIERS: SupportTier[] = [
   {
     id: "coffee",
-    title: "Invítame un Café",
+    title: "Impulso Café",
     emoji: "☕",
     price: "3 €",
     period: "pago único",
-    description: "Un gesto rápido para mantener los servidores activos y apoyar el código abierto.",
+    description: "Un café para el taller de Javier que financia horas de investigación en nuevos prompts.",
     benefits: [
-      "Badge de Supporter en tu navegador",
-      "Acceso directo a nuevas plantillas de prompts",
-      "Eterno agradecimiento de la comunidad",
+      "Badge virtual de Agradecido en tu navegador",
+      "Acceso libre a todos los 34+ prompts de por vida",
+      "La satisfacción de impulsar el software libre",
     ],
-    coffeeUrl: "https://buymeacoffee.com/apliarte",
-    githubSponsorUrl: "https://github.com/sponsors/apliarte",
+    coffeeUrl: "https://ko-fi.com/C0C11TWR1K",
+    githubSponsorUrl: "https://github.com/sponsors/erbolamm",
     revenueCatPackageId: "rc_tier_coffee",
   },
   {
     id: "sponsor",
-    title: "Sponsor Mensual",
+    title: "Co-Creador IA",
     emoji: "🚀",
     price: "5 €",
     period: "al mes",
-    description: "Apoya el desarrollo continuo de nuevos workflows y conectores de IA.",
+    description: "Socio activo de la comunidad. Tu apoyo directo expande el catálogo mes a mes.",
     popular: true,
     benefits: [
-      "Todo lo anterior",
-      "Prioridad en sugerencias de nuevos prompts / agentes",
-      "Exportación avanzada de workflows (JSON / Markdown)",
-      "Tu nombre en el README del repositorio Open Source",
+      "Todo lo del Impulso Café",
+      "Voz y voto en los nuevos prompts que se desarrollan cada mes",
+      "Insignia Supporter dorada en tu perfil local",
+      "Acceso a directos y tutoriales en vivo en Twitch",
     ],
-    githubSponsorUrl: "https://github.com/sponsors/apliarte",
+    githubSponsorUrl: "https://github.com/sponsors/erbolamm",
     revenueCatPackageId: "rc_tier_sponsor_monthly",
   },
   {
-    id: "gold",
-    title: "Patrocinador Gold",
+    id: "legacy",
+    title: "Mecenas Fundador (Legacy)",
     emoji: "👑",
     price: "15 €",
     period: "al mes",
-    description: "Para empresas, creadores y desarrolladores que usan estos prompts en producción.",
+    description: "Inmortalizado para siempre como pilar fundador en GitHub y en el Universo ErBolamm.",
     benefits: [
-      "Todo lo de Sponsor Mensual",
-      "Logo y enlace a tu proyecto en la web y repositorio",
-      "Asesoría y soporte en Discord de la comunidad",
-      "Acceso anticipado a conectores experimentales",
+      "Todo lo de Co-Creador IA",
+      "Tu nombre y avatar grabados en el README oficial de GitHub",
+      "Nodo de honor en el Grafo 3D de Universo ErBolamm",
+      "Acceso prioritario a herramientas experimentales",
     ],
-    githubSponsorUrl: "https://github.com/sponsors/apliarte",
-    revenueCatPackageId: "rc_tier_gold_monthly",
+    githubSponsorUrl: "https://github.com/sponsors/erbolamm",
+    revenueCatPackageId: "rc_tier_legacy_monthly",
   },
 ];
 
@@ -87,15 +87,14 @@ class RevenueCatService {
   async supportWithTier(tier: SupportTier): Promise<boolean> {
     if (this.isInitialized && tier.revenueCatPackageId) {
       try {
-        // Ejecución con Purchases JS
         this.setSupporter(true);
         return true;
       } catch {
-        // fallback a redirección
+        // fallback
       }
     }
 
-    // Redirección directa al canal de patrocinio si no hay API key configurada
+    // Redirección directa al canal canónico de patrocinio
     if (tier.githubSponsorUrl) {
       window.open(tier.githubSponsorUrl, "_blank", "noopener,noreferrer");
     } else if (tier.coffeeUrl) {

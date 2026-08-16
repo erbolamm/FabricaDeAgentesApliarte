@@ -3,6 +3,7 @@ import { useSearchParams, Link } from "react-router-dom";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { AgentCard } from "@/components/AgentCard";
+import { CommunityBanner } from "@/components/CommunityBanner";
 import { CATEGORIES } from "@/data/agents";
 import { useAgents } from "@/hooks/useAgents";
 import type { AgentCategory } from "@/types";
@@ -46,6 +47,11 @@ export function Catalog() {
               {agents.length} plantillas de prompt listas para personalizar, copiar con 1-click o ejecutar directamente con tus conectores de IA.
             </p>
           </header>
+
+          {/* Banner Comunitario Periódico */}
+          <div className="mb-10">
+            <CommunityBanner />
+          </div>
 
           <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             {/* Categorías */}

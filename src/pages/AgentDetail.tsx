@@ -14,6 +14,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { CreateInPlatformGuide } from "@/components/CreateInPlatformGuide";
 import { FeedbackButton } from "@/components/FeedbackButton";
+import { CommunityBanner } from "@/components/CommunityBanner";
 import {
   Copy,
   Check,
@@ -416,6 +417,9 @@ ${output ? `## Resultado Generado\n\n${output}` : ""}`;
             />
           </div>
         </div>
+
+        {/* Banner Comunitario Periódico Flotante */}
+        <CommunityBanner variant="floating" />
       </main>
 
       <SiteFooter />

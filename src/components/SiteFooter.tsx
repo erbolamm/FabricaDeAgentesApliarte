@@ -11,7 +11,7 @@ export const SiteFooter = () => {
             <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-primary text-primary-foreground text-xs font-bold">
               🤖
             </span>
-            Fábrica de Agentes
+            Fábrica de Agentes ApliArte
           </Link>
           <p className="mt-3 max-w-xs text-xs text-muted-foreground leading-relaxed">
             Plataforma 100% Open Source de prompts avanzados y workflows de IA con ejecución BYOK

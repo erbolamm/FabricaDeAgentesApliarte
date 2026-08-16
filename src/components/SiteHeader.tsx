@@ -15,7 +15,7 @@ export const SiteHeader = () => {
             🤖
           </span>
           <span className="flex items-center gap-1.5">
-            Fábrica de Agentes
+            Fábrica de Agentes ApliArte
             <Badge variant="outline" className="text-[10px] py-0 px-1.5 text-emerald-500 border-emerald-500/30 font-mono">
               Open Source
             </Badge>

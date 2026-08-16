@@ -31,20 +31,18 @@ export function Index() {
         <div className="container mx-auto px-4 text-center max-w-4xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold text-primary mb-6 animate-pulse">
             <Sparkles className="h-3.5 w-3.5" />
-            <span>Fábrica de Prompts & Agentes de IA — 100% Open Source</span>
+            <span>Fabrica tu agente gratis con ApliArte — 100% Open Source</span>
           </div>
 
           <h1 className="text-4xl font-extrabold tracking-tight sm:text-6xl sm:leading-tight">
-            Workflows y Prompts de IA de alta precisión.{" "}
+            Fábrica de Agentes ApliArte.{" "}
             <span className="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Ejecuta con tu propia IA.
+              Prompts & Workflows de IA.
             </span>
           </h1>
 
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Catálogo comunitario de plantillas de prompts optimizadas para <strong>DeepSeek-R1</strong>,{" "}
-            <strong>Claude 3.7</strong>, <strong>GPT-4o</strong> y <strong>Gemini 2.0</strong>. Rellena las variables,
-            copia en 1-click o ejecuta directamente con tus propias API keys.
+            Fabrica tu agente gratis con ApliArte. Catálogo comunitario de plantillas de prompts de alta precisión listos para configurar en <strong>Google Gemini (Gemas)</strong>, <strong>ChatGPT (Custom GPTs)</strong>, <strong>Claude</strong> y <strong>DeepSeek</strong>.
           </p>
 
           {/* CTA Buttons */}

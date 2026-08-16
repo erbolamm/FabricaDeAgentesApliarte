@@ -198,21 +198,41 @@ export function Index() {
         </div>
       </section>
 
-      {/* CTA DE APOYO / SPONSOR */}
-      <section className="py-16 border-t border-border/60 bg-gradient-to-b from-card/30 to-background">
-        <div className="container mx-auto px-4 max-w-3xl text-center space-y-4">
-          <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-pink-500/10 text-pink-500 mx-auto">
-            <Heart className="h-6 w-6 fill-current" />
+      {/* CTA DE APOYO / SPONSOR CON PNL Y HUMOR DIRECTO */}
+      <section className="py-16 border-t border-border/60 bg-gradient-to-b from-card/40 to-background">
+        <div className="container mx-auto px-4 max-w-3xl text-center space-y-5">
+          <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/20 bg-amber-500/10 px-4 py-1 text-xs font-bold text-amber-600 dark:text-amber-400">
+            <span>💡 Realidad vs Humo</span>
           </div>
-          <h3 className="text-2xl font-bold">¿Te resulta útil la Fábrica de Agentes?</h3>
-          <p className="text-xs text-muted-foreground max-w-xl mx-auto leading-relaxed">
-            Mantener este proyecto libre de suscripciones y anuncios es posible gracias al apoyo voluntario de la comunidad mediante RevenueCat y GitHub Sponsors.
+
+          <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">
+            Hay empresas cobrando 2.000 € por formaciones de IA...
+          </h3>
+
+          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            En ApliArte tienes los cursos completos en{" "}
+            <a
+              href="https://ia.apliarte.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary font-semibold underline underline-offset-4 hover:text-primary/80"
+            >
+              ia.apliarte.com
+            </a>{" "}
+            y esta Fábrica de Agentes <strong>100% gratis</strong> para que no gastes ni un solo duro.
+            Pero oye: si estas herramientas te ahorran semanas de trabajo y te ayudan a <strong>facturar y ganar pasta</strong>... ¡al menos convídate a un café! 😉
           </p>
-          <div className="pt-2 flex justify-center gap-3">
-            <Button asChild size="sm" className="gap-1.5 text-xs bg-pink-600 hover:bg-pink-700 text-white rounded-full px-6">
+
+          <div className="pt-2 flex flex-wrap justify-center items-center gap-3">
+            <Button asChild size="lg" className="gap-2 text-xs font-bold rounded-full px-7 shadow-md">
               <Link to="/apoyar">
-                <Heart className="h-3.5 w-3.5 fill-current" /> Apoyar el Proyecto
+                <Heart className="h-4 w-4 fill-current text-pink-300" /> Convidar un Café / Apoyar el Proyecto
               </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="gap-2 text-xs rounded-full px-6">
+              <a href="https://ia.apliarte.com" target="_blank" rel="noopener noreferrer">
+                <Sparkles className="h-4 w-4 text-amber-500" /> Ir a ia.apliarte.com
+              </a>
             </Button>
           </div>
         </div>

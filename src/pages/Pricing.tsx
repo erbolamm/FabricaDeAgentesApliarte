@@ -59,6 +59,18 @@ export function Pricing() {
               <span>¡Eres un Supporter activo! Tu apoyo financia el desarrollo de nuevos prompts.</span>
             </div>
           )}
+
+          {/* Banner de Realidad vs Humo */}
+          <div className="mt-8 rounded-2xl border border-amber-500/30 bg-amber-500/5 p-4 text-xs text-muted-foreground max-w-xl mx-auto leading-relaxed">
+            <span className="font-bold text-amber-600 dark:text-amber-400 block mb-1">
+              💡 Formaciones de 2.000 € vs Código Abierto Libre
+            </span>
+            Hay consultoras y cursos que te piden miles de euros por fórmulas de IA. En{" "}
+            <a href="https://ia.apliarte.com" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold underline">
+              ia.apliarte.com
+            </a>{" "}
+            y acá lo tienes gratis para no gastar un duro. Pero si esto te hace ganar pasta y avanzar... ¡convídate a un café! 😉
+          </div>
         </div>
 
         {/* Tiers de Patrocinio */}

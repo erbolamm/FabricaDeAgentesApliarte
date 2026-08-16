@@ -125,6 +125,54 @@ export function Index() {
         </div>
       </section>
 
+      {/* MANIFIESTO COMUNITARIO / PNL */}
+      <section className="py-14 border-b border-border/60 bg-card/40">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/5 via-card to-background p-8 md:p-10 shadow-sm relative overflow-hidden">
+            <div className="flex flex-col md:flex-row items-center gap-6">
+              <div className="flex-shrink-0 text-center">
+                <div className="h-16 w-16 rounded-2xl bg-primary text-primary-foreground flex items-center justify-center text-2xl font-black shadow-md mx-auto">
+                  👨‍💻
+                </div>
+                <span className="text-[11px] font-bold text-muted-foreground mt-2 block">
+                  Javier Mateo (@erbolamm)
+                </span>
+              </div>
+
+              <div className="space-y-2 text-center md:text-left">
+                <Badge variant="outline" className="text-[11px] text-primary border-primary/30 font-semibold mb-1">
+                  Estudios de IA en Abierto
+                </Badge>
+                <h3 className="text-xl md:text-2xl font-black tracking-tight text-foreground">
+                  "Todos mis estudios de agentes en una sola web."
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  <strong>Hago mis prompts, comparto mis prompts y espero los tuyos para agregarlos.</strong> Sin trampa ni cartón: cada plantilla que ves aquí la he afinado para resolver tareas reales. Si tienes un prompt que te ahorra horas, envíalo y lo sumamos a la comunidad.
+                </p>
+
+                <div className="pt-2 flex flex-wrap items-center justify-center md:justify-start gap-3">
+                  <Button asChild size="sm" className="gap-1.5 text-xs rounded-full">
+                    <Link to="/crear">
+                      <Sparkles className="h-3.5 w-3.5" /> Compartir un Prompt
+                    </Link>
+                  </Button>
+
+                  <Button asChild variant="outline" size="sm" className="gap-1.5 text-xs rounded-full">
+                    <a
+                      href="https://github.com/erbolamm/FabricaDeAgentesApliarte/pulls"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Github className="h-3.5 w-3.5" /> Enviar por Pull Request
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PROMPTS DESTACADOS */}
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-6xl">

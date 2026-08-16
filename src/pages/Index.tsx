@@ -63,7 +63,7 @@ export function Index() {
 
             <Button size="lg" variant="ghost" asChild className="rounded-full px-6 gap-2 text-sm text-muted-foreground hover:text-foreground">
               <a
-                href="https://github.com/apliarte/FabricaDeAgentesApliarte"
+                href="https://github.com/erbolamm/FabricaDeAgentesApliarte"
                 target="_blank"
                 rel="noopener noreferrer"
               >

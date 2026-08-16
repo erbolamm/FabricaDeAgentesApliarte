@@ -128,7 +128,7 @@ export function Pricing() {
           <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
             <Button variant="outline" size="sm" asChild className="gap-2 text-xs">
               <a
-                href="https://github.com/apliarte/FabricaDeAgentesApliarte"
+                href="https://github.com/erbolamm/FabricaDeAgentesApliarte"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -137,7 +137,7 @@ export function Pricing() {
             </Button>
             <Button variant="outline" size="sm" asChild className="gap-2 text-xs">
               <a
-                href="https://github.com/apliarte/FabricaDeAgentesApliarte/pulls"
+                href="https://github.com/erbolamm/FabricaDeAgentesApliarte/pulls"
                 target="_blank"
                 rel="noopener noreferrer"
               >

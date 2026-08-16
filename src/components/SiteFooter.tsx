@@ -19,7 +19,7 @@ export const SiteFooter = () => {
           </p>
           <div className="mt-4 flex items-center gap-3 text-xs text-muted-foreground">
             <a
-              href="https://github.com/apliarte/FabricaDeAgentesApliarte"
+              href="https://github.com/erbolamm/FabricaDeAgentesApliarte"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-foreground flex items-center gap-1"
@@ -63,7 +63,7 @@ export const SiteFooter = () => {
           <ul className="space-y-2 text-xs text-muted-foreground">
             <li>
               <a
-                href="https://github.com/apliarte/FabricaDeAgentesApliarte"
+                href="https://github.com/erbolamm/FabricaDeAgentesApliarte"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-foreground"
@@ -73,7 +73,7 @@ export const SiteFooter = () => {
             </li>
             <li>
               <a
-                href="https://github.com/apliarte/FabricaDeAgentesApliarte/blob/main/README.md"
+                href="https://github.com/erbolamm/FabricaDeAgentesApliarte/blob/main/README.md"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-foreground"

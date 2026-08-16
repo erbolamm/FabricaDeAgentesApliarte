@@ -79,7 +79,7 @@ export const SiteHeader = () => {
         <div className="flex items-center gap-2.5">
           <Button variant="outline" size="sm" asChild className="gap-1.5 text-xs h-8 border-border">
             <a
-              href="https://github.com/apliarte/FabricaDeAgentesApliarte"
+              href="https://github.com/erbolamm/FabricaDeAgentesApliarte"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5"

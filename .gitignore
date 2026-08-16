@@ -51,3 +51,5 @@ ui-debug.log*
 # Local IDE & Asistentes
 .kiro/
 .claude/
+# Local Pi runtime state
+.atl/

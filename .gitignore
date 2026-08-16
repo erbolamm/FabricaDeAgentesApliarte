@@ -1,0 +1,41 @@
+# Dependencias
+node_modules
+functions/node_modules
+functions/lib
+
+# Build
+dist
+dist-ssr
+
+# Variables de entorno — NUNCA subir al repo
+.env
+.env.*
+*.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Firebase
+.firebase/
+
+# Local IDE & Assistants
+.kiro/
+.claude/

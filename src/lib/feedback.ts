@@ -9,7 +9,7 @@ export function generateFeedbackMailto({
   contextType = "prompt",
   url = typeof window !== "undefined" ? window.location.href : "",
 }: FeedbackMailOptions): string {
-  const email = "javier@apliarte.com";
+  const email = "erbolamm@gmail.com";
   const subject = `Fábrica de Agentes ApliArte — ${contextType === "prompt" ? `Feedback: ${contextName}` : "Sugerencias & Feedback"}`;
 
   const body = `Hola Javier,

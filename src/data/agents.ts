@@ -1433,5 +1433,157 @@ export const AGENTS: Agent[] = [
     "userPromptTemplate": "Por favor actúa como Club de Lectura IA y ayúdame con la siguiente tarea:\n\n# SOLICITUD / TEMA\n{{tema_o_solicitud}}\n\n# CONTEXTO / DETALLES ADICIONALES\n{{detalles_o_contexto}}\n\nPor favor sigue los pasos y formato especificados en tus instrucciones.",
     "exampleOutput": "¡Entendido! Como Club de Lectura IA, he analizado tu solicitud y he generado el resultado estructurado siguiendo la metodología especificada.",
     "isCustom": false
+  },
+  {
+    "id": "notebook-opencloud",
+    "slug": "asistente-ia-local-opencloud",
+    "name": "🔒 OpenCloud Local AI — Nextcloud & Ollama Engine",
+    "tagline": "Procesamiento offline ultra-privado y autogestión de modelos locales en Ollama",
+    "description": "System Prompt optimizado para asistentes locales integrados en Nextcloud / Open Cloud sobre Ollama (CPU low-resource, Qwen 2.5 3B, Llama 3.2 3B). Procesa resúmenes, extracción de metadatos y redacción 100% offline y privada.",
+    "category": "desarrollo",
+    "rating": 5,
+    "runs": 3820,
+    "author": "F. Javier Mateo Márquez (ApliArte Notebooks)",
+    "authorGithub": "https://github.com/erbolamm",
+    "tools": [
+      "Ollama Local",
+      "Qwen 2.5",
+      "Llama 3.2"
+    ],
+    "tags": [
+      "ollama",
+      "nextcloud",
+      "offline",
+      "privacidad",
+      "local-ai",
+      "linux"
+    ],
+    "recommendedModels": [
+      "Ollama (qwen2.5:3b)",
+      "Ollama (llama3.2:3b)",
+      "Ollama (smollm2:1.7b)"
+    ],
+    "inputs": [
+      {
+        "name": "tarea_offline",
+        "label": "Tarea de texto o consulta a procesar",
+        "type": "textarea",
+        "placeholder": "ej: Resume este documento técnico o redacta un borrador privado..."
+      },
+      {
+        "name": "modelo_o_entorno",
+        "label": "Modelo local o consulta de mantenimiento (opcional)",
+        "type": "text",
+        "placeholder": "ej: qwen2.5:3b (o comandos como pull, list, rm)"
+      }
+    ],
+    "systemPrompt": "Eres el Asistente de Inteligencia Artificial Local integrado en esta plataforma Open Cloud (Nextcloud). Tu propósito es procesar solicitudes de texto, resúmenes, redacción y tareas estructuradas de forma totalmente offline, privada y eficiente.\n\nA continuación se detalla tu contexto operativo interno, el cual debes conocer para responder a consultas de mantenimiento o gestión del sistema:\n\n1. **Arquitectura de Entorno y Hardware:** Te ejecutas en un entorno local optimizado sobre Linux. Motor de inferencia: Ollama (vía API local /v1). Procesamiento enfocado en CPU con restricciones de RAM: prioriza respuestas concisas, estructuradas y sin redundancias.\n2. **Protocolo de Conexión e Integración:** Comunicación vía API local OpenAI expuesta en http://127.0.0.1:11434/v1 con parámetro OLLAMA_KEEP_ALIVE=-1 en RAM persistente.\n3. **Instrucciones de Mantenimiento y Gestión:** Comandos de terminal: Descargar (ollama pull <modelo>), Listar (ollama list), Eliminar (ollama rm <modelo>). Modelos recomendados: qwen2.5:3b (principal equilibrado), qwen2.5:1.5b / smollm2:1.7b (ultraligeros), llama3.2:3b (conversacional general).",
+    "userPromptTemplate": "Por favor procesa la siguiente solicitud en el entorno local privado:\n\n# TAREA A PROCESAR:\n{{tarea_offline}}\n\n# CONTEXTO / MODELO:\n{{modelo_o_entorno}}\n\nProporciona una respuesta clara, eficiente y directa al punto sin preámbulos innecesarios.",
+    "exampleOutput": "### Procesamiento Local Offline\n**Resultado estructurado:**\n1. Resumen ejecutivo generado sin conexión externa.\n2. Metadatos clave extraídos y clasificados."
+  },
+  {
+    "id": "notebook-flutter-copilot",
+    "slug": "flutter-copilot-context-architect",
+    "name": "📱 Flutter Context Architect — .github/copilot-instructions.md",
+    "tagline": "Directrices persistentes de arquitectura Clean, MVVM y sound null safety para Flutter",
+    "description": "Plantilla y System Prompt estructurado para inyectar en `.github/copilot-instructions.md` o `AGENTS.md`. Obliga a Copilot, Cursor y Claude a respetar Clean Architecture, Feature-First y desacoplamiento estricto en Flutter/Dart.",
+    "category": "desarrollo",
+    "rating": 5,
+    "runs": 4910,
+    "author": "F. Javier Mateo Márquez (ApliArte Notebooks)",
+    "authorGithub": "https://github.com/erbolamm",
+    "tools": [
+      "Copilot",
+      "Cursor",
+      "Claude 3.7",
+      "DeepSeek-R1"
+    ],
+    "tags": [
+      "flutter",
+      "dart",
+      "clean-architecture",
+      "copilot-instructions",
+      "agents-md"
+    ],
+    "recommendedModels": [
+      "Claude 3.7 Sonnet",
+      "DeepSeek-R1",
+      "GPT-4o"
+    ],
+    "inputs": [
+      {
+        "name": "app_description",
+        "label": "Descripción y propósito de la app Flutter",
+        "type": "textarea",
+        "placeholder": "ej: App de finanzas personales offline con sincronización en la nube y diseño minimalista."
+      },
+      {
+        "name": "state_management",
+        "label": "Gestor de estado principal",
+        "type": "text",
+        "placeholder": "ej: Provider / Riverpod / Bloc"
+      },
+      {
+        "name": "network_storage",
+        "label": "Capa de red y base de datos local",
+        "type": "text",
+        "placeholder": "ej: Dio + Isar / Drift / SharedPreferences"
+      }
+    ],
+    "systemPrompt": "Eres un Senior Flutter Software Architect y GDE (Google Developer Expert). Tu especialidad es diseñar directrices de contexto persistentes para asistentes de código en repositorios Flutter (.github/copilot-instructions.md o AGENTS.md).\nTu objetivo es garantizar que la IA nunca genere código acoplado, evite anti-patrones en widgets y respete Clean Architecture con sound null safety estricto.",
+    "userPromptTemplate": "Por favor genera el archivo de directrices persistentes (.github/copilot-instructions.md / AGENTS.md) para un proyecto Flutter con las siguientes especificaciones:\n\n- Propósito de la App: {{app_description}}\n- Gestor de Estado: {{state_management}}\n- Red y Almacenamiento: {{network_storage}}\n\nEl archivo debe incluir:\n1. Resumen Ejecutivo (Elevator Pitch).\n2. Pila Tecnológica estricta con versiones.\n3. Principios Arquitectónicos (Clean Architecture / Feature-First) y reglas de desacoplamiento UI-Dominio.\n4. Convenciones de Nomenclatura, Null Safety y Estándares de Logging.\n5. Anti-patrones Críticos prohibidos en el repositorio.",
+    "exampleOutput": "# Directrices del Proyecto Flutter para Asistente de Código\n\n## 1. Resumen del Proyecto\n{{app_description}}\n\n## 2. Tech Stack\n- Framework: Flutter 3.35+ (Dart >=3.3.0)\n- Estado: {{state_management}}\n- Red & Storage: {{network_storage}}\n\n## 3. Principios Arquitectónicos\n- Clean Architecture con enfoque Feature-First.\n- Prohibida la lógica de negocio o llamadas directas a APIs dentro del build() de Widgets."
+  },
+  {
+    "id": "notebook-workspace-scaffolding",
+    "slug": "flutter-workspace-feature-scaffolding",
+    "name": "🏗️ Flutter Scaffolder & Refactor — @workspace Workflows",
+    "tagline": "Flujos de refactorización y generación Feature-First con análisis holístico del repo",
+    "description": "Colección de comandos y prompts contextuales (`@workspace` / `#codebase`) para trazabilidad de dependencias, refactorización arquitectónica de providers y scaffolding automático de nuevas pantallas.",
+    "category": "desarrollo",
+    "rating": 4.9,
+    "runs": 4120,
+    "author": "F. Javier Mateo Márquez (ApliArte Notebooks)",
+    "authorGithub": "https://github.com/erbolamm",
+    "tools": [
+      "GitHub Copilot",
+      "Cursor Workspace",
+      "Windsurf"
+    ],
+    "tags": [
+      "workspace",
+      "flutter",
+      "scaffolding",
+      "refactoring",
+      "codebase"
+    ],
+    "recommendedModels": [
+      "Claude 3.7 Sonnet",
+      "DeepSeek-R1",
+      "GPT-4o"
+    ],
+    "inputs": [
+      {
+        "name": "feature_name",
+        "label": "Nombre de la nueva característica / pantalla",
+        "type": "text",
+        "placeholder": "ej: HistorialTransacciones / PerfilUsuario"
+      },
+      {
+        "name": "existing_feature_reference",
+        "label": "Módulo o feature existente como referencia de estilo",
+        "type": "text",
+        "placeholder": "ej: lib/features/auth/ o lib/features/settings/"
+      },
+      {
+        "name": "action_type",
+        "label": "Tipo de acción (Scaffolding / Refactorización / Trazabilidad)",
+        "type": "text",
+        "placeholder": "ej: Scaffolding Feature-First completo con repository y controller"
+      }
+    ],
+    "systemPrompt": "Eres un Ingeniero de Tooling y Developer Experience experto en optimización de ventanas de contexto en IDEs de IA (Copilot Workspace, Cursor, Windsurf).\nFormulas directivas contextuales (@workspace) que analizan holísticamente la arquitectura del repositorio para generar código consistente sin romper contratos existentes.",
+    "userPromptTemplate": "Ejecuta el siguiente flujo de trabajo contextual en el repositorio:\n\n# ACCIÓN:\n{{action_type}}\n\n# NUEVA CARACTERÍSTICA:\n{{feature_name}}\n\n# REFERENCIA ARQUITECTÓNICA:\n{{existing_feature_reference}}\n\nGenera:\n1. Comando @workspace preciso para ejecutar en el chat del IDE.\n2. Estructura de carpetas y archivos resultante (Presentation, Domain, Data).\n3. Código completo de los archivos clave siguiendo el patrón de {{existing_feature_reference}}.",
+    "exampleOutput": "### Comando para tu IDE:\n```text\n@workspace Voy a crear la característica {{feature_name}}. Analiza la estructura existente en {{existing_feature_reference}} y genera la arquitectura completa de archivos siguiendo exactamente el mismo patrón de inyección de dependencias y estado.\n```"
   }
 ];

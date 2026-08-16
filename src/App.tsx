@@ -32,6 +32,13 @@ const App = () => (
         <HashRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            {/* Alias y anclas de HashRouter para que nunca den 404 */}
+            <Route path="/beneficios" element={<Index />} />
+            <Route path="/como-funciona" element={<Index />} />
+            <Route path="/roadmap" element={<Index />} />
+            <Route path="/faq" element={<Index />} />
+            <Route path="/inicio" element={<Index />} />
+
             <Route path="/agentes" element={<Catalog />} />
             <Route path="/agentes/:slug" element={<AgentDetail />} />
             <Route path="/conectores" element={<Connectors />} />

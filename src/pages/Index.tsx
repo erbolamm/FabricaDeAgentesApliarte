@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { AgentCard } from "@/components/AgentCard";
@@ -38,6 +39,23 @@ import {
 export function Index() {
   const { data: agents = [] } = useAgents();
   const featured = agents.slice(0, 6);
+  const location = useLocation();
+
+  useEffect(() => {
+    // Detectar ruta o hash (#beneficios, /beneficios, #como-funciona, /como-funciona, #roadmap, /roadmap)
+    const rawPath = location.pathname.replace(/^\/+/, "");
+    const rawHash = location.hash.replace(/^#+/, "");
+    const target = rawPath || rawHash;
+
+    if (target && ["beneficios", "como-funciona", "roadmap", "faq", "nota-personal"].includes(target)) {
+      const el = document.getElementById(target);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 150);
+      }
+    }
+  }, [location]);
 
   return (
     <div className="min-h-screen bg-background text-foreground">

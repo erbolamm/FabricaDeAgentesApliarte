@@ -2,9 +2,15 @@ import { Link } from "react-router-dom";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { AgentCard } from "@/components/AgentCard";
+import { CommunityBanner } from "@/components/CommunityBanner";
+import { HowItWorksSection } from "@/components/HowItWorksSection";
+import { RoadmapSection } from "@/components/RoadmapSection";
+import { AuthorPersonalNote } from "@/components/AuthorPersonalNote";
+import { SocialShareBar } from "@/components/SocialShareBar";
 import { useAgents } from "@/hooks/useAgents";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import {
   Sparkles,
   Key,
@@ -16,6 +22,17 @@ import {
   ShieldCheck,
   Cpu,
   Bot,
+  Globe,
+  Monitor,
+  Smartphone,
+  Eye,
+  Lock,
+  RefreshCw,
+  Share2,
+  Activity,
+  Compass,
+  Coffee,
+  Check,
 } from "lucide-react";
 
 export function Index() {
@@ -26,166 +43,181 @@ export function Index() {
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
 
-      {/* HERO SECTION */}
+      {/* HERO SECTION - ERBOLAMM UNIVERSO & FÁBRICA DE AGENTES */}
       <section className="relative overflow-hidden border-b border-border/60 py-20 lg:py-28">
-        <div className="container mx-auto px-4 text-center max-w-4xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold text-primary mb-6 animate-pulse">
-            <Sparkles className="h-3.5 w-3.5" />
-            <span>Fabrica tu agente gratis con ApliArte — 100% Open Source</span>
+        <div className="container mx-auto px-4 text-center max-w-4xl space-y-6">
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            <Badge variant="outline" className="text-xs font-semibold py-1 px-3 border-emerald-500/40 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+              🟢 Universo abierto · Crea y conecta tus planetas y agentes
+            </Badge>
+            <div className="flex items-center gap-1.5 text-xs text-muted-foreground font-mono">
+              <span className="inline-flex items-center gap-1"><Globe className="h-3 w-3" /> Web</span> •
+              <span className="inline-flex items-center gap-1"><Monitor className="h-3 w-3" /> Desktop</span> •
+              <span className="inline-flex items-center gap-1"><Smartphone className="h-3 w-3" /> Mobile</span>
+            </div>
           </div>
 
-          <h1 className="text-4xl font-extrabold tracking-tight sm:text-6xl sm:leading-tight">
-            Fábrica de Agentes ApliArte.{" "}
-            <span className="text-primary bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Prompts & Workflows de IA.
+          <div className="space-y-3">
+            <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-muted-foreground block">
+              Francisco Javier Mateo Márquez · ErBolamm Universo
             </span>
-          </h1>
+            <h1 className="text-4xl font-black tracking-tight sm:text-6xl sm:leading-tight">
+              Tu Universo de Software, Prompts y Proyectos en 3D.
+            </h1>
+          </div>
 
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Fabrica tu agente gratis con ApliArte. Catálogo comunitario de plantillas de prompts de alta precisión listos para configurar en <strong>Google Gemini (Gemas)</strong>, <strong>ChatGPT (Custom GPTs)</strong>, <strong>Claude</strong> y <strong>DeepSeek</strong>.
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Conecta, visualiza y comparte todo tu ecosistema de aplicaciones, webs y herramientas de IA en un mapa interactivo de planetas sin que nadie toque tus datos.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Button size="lg" asChild className="rounded-full px-8 gap-2 text-sm shadow-md">
+          {/* Botones de Acción */}
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+            <Button size="lg" asChild className="rounded-full px-8 gap-2 text-sm font-bold shadow-lg bg-primary hover:bg-primary/90">
               <Link to="/agentes">
-                Explorar Catálogo <ArrowRight className="h-4 w-4" />
+                🌌 Entrar al Universo / Catálogo <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
 
-            <Button size="lg" variant="outline" asChild className="rounded-full px-6 gap-2 text-sm">
+            <Button size="lg" variant="outline" asChild className="rounded-full px-6 gap-2 text-sm font-semibold">
               <Link to="/conectores">
                 <Key className="h-4 w-4 text-primary" /> Conectar tu IA (BYOK)
               </Link>
             </Button>
 
-            <Button size="lg" variant="ghost" asChild className="rounded-full px-6 gap-2 text-sm text-muted-foreground hover:text-foreground">
-              <a
-                href="https://github.com/erbolamm/FabricaDeAgentesApliarte"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Github className="h-4 w-4" /> Ver en GitHub
-              </a>
+            <Button size="lg" variant="ghost" asChild className="rounded-full px-6 gap-2 text-sm font-semibold text-muted-foreground hover:text-foreground">
+              <Link to="/apoyar">
+                <Heart className="h-4 w-4 text-pink-500 fill-current" /> Apoyar como Fundador
+              </Link>
             </Button>
           </div>
 
-          {/* Badges de Garantía */}
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-xs text-muted-foreground">
+          {/* Badges de Garantía y Pilares */}
+          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 text-xs text-muted-foreground font-medium">
             <div className="flex items-center gap-1.5">
               <ShieldCheck className="h-4 w-4 text-emerald-500" />
-              <span>Sin Firebase / 100% Privado</span>
+              <span>🆓 Explora Gratis & Privado</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <Zap className="h-4 w-4 text-amber-500" />
-              <span>DeepSeek, Claude, GPT, Gemini, Groq, Ollama</span>
+              <Lock className="h-4 w-4 text-amber-500" />
+              <span>🔒 Proyectos Aislados y Seguros</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <Heart className="h-4 w-4 text-pink-500" />
-              <span>Gratis & Donaciones Vía RevenueCat</span>
+              <Sparkles className="h-4 w-4 text-primary" />
+              <span>🪐 Tus planetas y agentes propios</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <Compass className="h-4 w-4 text-purple-500" />
+              <span>🎨📚🛠️ Cuatro Pilares (Cultura, Creación, Educación, Herramientas)</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* TRES PILARES */}
-      <section className="py-16 bg-muted/20 border-b border-border/60">
+      {/* BENEFICIOS - TUS PROYECTOS. SUS RELACIONES. UNA SOLA VISTA */}
+      <section id="beneficios" className="py-20 border-b border-border/60 bg-card/30">
         <div className="container mx-auto px-4 max-w-5xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="rounded-2xl border border-border/80 bg-card p-6 space-y-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                <Copy className="h-5 w-5" />
+          <div className="text-center mb-14 space-y-2">
+            <span className="text-xs font-bold uppercase tracking-wider text-primary">
+              Visión del Ecosistema
+            </span>
+            <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl text-foreground">
+              Tus proyectos. Sus relaciones. Una sola vista.
+            </h2>
+            <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
+              No es un catálogo plano: es una vista viva de tu ecosistema, pensada para crear contexto sin complicarte.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="rounded-3xl border border-border/80 bg-card p-6 space-y-3 shadow-sm">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-sky-500/10 text-sky-500 text-xl font-bold">
+                🌀
               </div>
-              <h3 className="text-base font-bold">1. Copia con 1-Click</h3>
+              <h3 className="text-base font-bold">3D Ligero</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Rellena las variables dinámicas de cualquier prompt y cópialo formateado con instrucciones de sistema para ChatGPT, Claude o Cursor.
+                Render WebGL y React optimizado para explorar con fluidez incluso desde equipos modestos.
               </p>
             </div>
 
-            <div className="rounded-2xl border border-border/80 bg-card p-6 space-y-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-500/10 text-amber-500">
-                <Cpu className="h-5 w-5" />
+            <div className="rounded-3xl border border-border/80 bg-card p-6 space-y-3 shadow-sm">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-500/10 text-emerald-500 text-xl font-bold">
+                🔐
               </div>
-              <h3 className="text-base font-bold">2. Conecta tu Propia IA</h3>
+              <h3 className="text-base font-bold">Privacidad por Creador</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Usa tus propias claves (Bring Your Own Key). Ejecuta los prompts directamente desde tu navegador contra las APIs oficiales sin intermediarios.
+                Cada persona trabaja en un espacio aislado en su navegador: nadie puede modificar tus planetas ni leer tus datos.
               </p>
             </div>
 
-            <div className="rounded-2xl border border-border/80 bg-card p-6 space-y-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-500">
-                <Github className="h-5 w-5" />
+            <div className="rounded-3xl border border-border/80 bg-card p-6 space-y-3 shadow-sm">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-500 text-xl font-bold">
+                🔄
               </div>
-              <h3 className="text-base font-bold">3. 100% Código Abierto</h3>
+              <h3 className="text-base font-bold">Sincronización Abierta</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                Sin paywalls obligatorios. Todo el código y catálogo son libres para auditar, forkiar y desplegar en tu propio hosting o GitHub Pages.
+                Tu universo se describe con <code className="text-[11px] bg-muted px-1.5 py-0.5 rounded font-mono">universe.json</code> y puede crecer desde GitHub y otras fuentes.
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-border/80 bg-card p-6 space-y-3 shadow-sm">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-purple-500/10 text-purple-500 text-xl font-bold">
+                🔗
+              </div>
+              <h3 className="text-base font-bold">Visor Público Embebible</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Comparte tu mapa como enlace o exporta tus prompts en 1-clic para Gemini, Claude o ChatGPT.
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-border/80 bg-card p-6 space-y-3 shadow-sm">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-rose-500/10 text-rose-500 text-xl font-bold">
+                📡
+              </div>
+              <h3 className="text-base font-bold">Salud en Tiempo Real</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Ejecución directa BYOK contra DeepSeek, Claude, GPT o Gemini sin intermediarios ni demoras.
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-border/80 bg-card p-6 space-y-3 shadow-sm">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-indigo-500/10 text-indigo-500 text-xl font-bold">
+                🧭
+              </div>
+              <h3 className="text-base font-bold">Cuatro Pilares</h3>
+              <p className="text-xs text-muted-foreground leading-relaxed">
+                Ordena Cultura, Creación, Educación y Herramientas con colores y relaciones claras en tu mapa.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* MANIFIESTO COMUNITARIO / PNL */}
-      <section className="py-14 border-b border-border/60 bg-card/40">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/5 via-card to-background p-8 md:p-10 shadow-sm relative overflow-hidden">
-            <div className="flex flex-col md:flex-row items-center gap-6">
-              <div className="flex-shrink-0 text-center">
-                <div className="h-16 w-16 rounded-2xl bg-primary text-primary-foreground flex items-center justify-center text-2xl font-black shadow-md mx-auto">
-                  👨‍💻
-                </div>
-                <span className="text-[11px] font-bold text-muted-foreground mt-2 block">
-                  Javier Mateo (@erbolamm)
-                </span>
-              </div>
+      {/* CÓMO FUNCIONA PASO A PASO */}
+      <HowItWorksSection />
 
-              <div className="space-y-2 text-center md:text-left">
-                <Badge variant="outline" className="text-[11px] text-primary border-primary/30 font-semibold mb-1">
-                  Estudios de IA en Abierto
-                </Badge>
-                <h3 className="text-xl md:text-2xl font-black tracking-tight text-foreground">
-                  "Todos mis estudios de agentes en una sola web."
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  <strong>Hago mis prompts, comparto mis prompts y espero los tuyos para agregarlos.</strong> Sin trampa ni cartón: cada plantilla que ves aquí la he afinado para resolver tareas reales. Si tienes un prompt que te ahorra horas, envíalo y lo sumamos a la comunidad.
-                </p>
-
-                <div className="pt-2 flex flex-wrap items-center justify-center md:justify-start gap-3">
-                  <Button asChild size="sm" className="gap-1.5 text-xs rounded-full">
-                    <Link to="/crear">
-                      <Sparkles className="h-3.5 w-3.5" /> Compartir un Prompt
-                    </Link>
-                  </Button>
-
-                  <Button asChild variant="outline" size="sm" className="gap-1.5 text-xs rounded-full">
-                    <a
-                      href="https://github.com/erbolamm/FabricaDeAgentesApliarte/pulls"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Github className="h-3.5 w-3.5" /> Enviar por Pull Request
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
+      {/* MANIFIESTO COMUNITARIO Y BANNER PERIÓDICO */}
+      <section className="py-14 border-t border-border/60 bg-card/40">
+        <div className="container mx-auto px-4 max-w-4xl space-y-8">
+          <CommunityBanner variant="inline" />
         </div>
       </section>
 
       {/* PROMPTS DESTACADOS */}
-      <section className="py-20">
+      <section className="py-20 border-t border-border/60">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-10">
             <div>
               <p className="text-xs font-bold uppercase tracking-wider text-primary mb-1">
-                Directorio
+                Directorio de Prompts
               </p>
-              <h2 className="text-3xl font-extrabold tracking-tight">Prompts & Workflows Populares</h2>
+              <h2 className="text-3xl font-extrabold tracking-tight">Prompts & Workflows de IA ({agents.length})</h2>
+              <p className="text-xs text-muted-foreground mt-1">
+                Optimizado para DeepSeek-R1, Claude 3.7, GPT-4o y Gemini 2.0.
+              </p>
             </div>
-            <Button variant="ghost" asChild className="gap-1.5 text-xs">
+            <Button variant="ghost" asChild className="gap-1.5 text-xs font-bold">
               <Link to="/agentes">
-                Ver todos los {agents.length} prompts <ArrowRight className="h-3.5 w-3.5" />
+                Ver los {agents.length} prompts <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </Button>
           </div>
@@ -198,46 +230,83 @@ export function Index() {
         </div>
       </section>
 
-      {/* CTA DE APOYO / SPONSOR CON PNL Y HUMOR DIRECTO */}
-      <section className="py-16 border-t border-border/60 bg-gradient-to-b from-card/40 to-background">
-        <div className="container mx-auto px-4 max-w-3xl text-center space-y-5">
-          <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/20 bg-amber-500/10 px-4 py-1 text-xs font-bold text-amber-600 dark:text-amber-400">
-            <span>💡 Realidad vs Humo</span>
+      {/* ROADMAP POR FASES */}
+      <RoadmapSection />
+
+      {/* APOYO COMUNITARIO & EARLY ADOPTERS FUNDADORES */}
+      <section className="py-20 border-t border-border/60 bg-gradient-to-b from-card/30 to-background">
+        <div className="container mx-auto px-4 max-w-4xl text-center space-y-6">
+          <div className="inline-flex items-center gap-2 rounded-full border border-pink-500/20 bg-pink-500/10 px-4 py-1.5 text-xs font-semibold text-pink-600 dark:text-pink-400">
+            <Heart className="h-3.5 w-3.5 fill-current" />
+            <span>💖 Apoyo Comunitario & Early Adopters</span>
           </div>
 
-          <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">
-            Hay empresas cobrando 2.000 € por formaciones de IA...
+          <h3 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground">
+            Quien colabora hoy es un Early Adopter Fundador
           </h3>
 
           <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            En ApliArte tienes los cursos completos en{" "}
-            <a
-              href="https://ia.apliarte.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary font-semibold underline underline-offset-4 hover:text-primary/80"
-            >
-              ia.apliarte.com
-            </a>{" "}
-            y esta Fábrica de Agentes <strong>100% gratis</strong> para que no gastes ni un solo duro.
-            Pero oye: si estas herramientas te ahorran semanas de trabajo y te ayudan a <strong>facturar y ganar pasta</strong>... ¡al menos convídate a un café! 😉
+            Colaborar ahora te da un <strong>50% de descuento vitalicio en ErBolamm Studio (la fábrica autónoma)</strong> para finales de 2026.
           </p>
 
-          <div className="pt-2 flex flex-wrap justify-center items-center gap-3">
-            <Button asChild size="lg" className="gap-2 text-xs font-bold rounded-full px-7 shadow-md">
+          {/* Canales Canónicos */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto pt-2">
+            <a
+              href="https://paypal.me/erbolamm"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-2xl border border-border bg-card p-5 hover:border-primary/50 transition-all text-center space-y-2 shadow-sm"
+            >
+              <span className="text-2xl block">💳</span>
+              <span className="font-bold text-sm block">PayPal</span>
+              <span className="text-xs text-muted-foreground font-mono">paypal.me/erbolamm</span>
+            </a>
+
+            <a
+              href="https://ko-fi.com/C0C11TWR1K"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-2xl border border-border bg-card p-5 hover:border-primary/50 transition-all text-center space-y-2 shadow-sm"
+            >
+              <span className="text-2xl block">☕</span>
+              <span className="font-bold text-sm block">Ko-fi</span>
+              <span className="text-xs text-muted-foreground font-mono">ko-fi.com/C0C11TWR1K</span>
+            </a>
+
+            <a
+              href="https://www.twitch.tv/apliarte"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-2xl border border-border bg-card p-5 hover:border-primary/50 transition-all text-center space-y-2 shadow-sm"
+            >
+              <span className="text-2xl block">🎮</span>
+              <span className="font-bold text-sm block">Twitch Tips</span>
+              <span className="text-xs text-muted-foreground font-mono">twitch.tv/apliarte</span>
+            </a>
+          </div>
+
+          <div className="rounded-2xl border border-primary/20 bg-primary/5 p-4 text-xs text-muted-foreground max-w-xl mx-auto">
+            <p className="font-semibold text-foreground mb-0.5">Transparencia, no urgencia artificial</p>
+            Guardá tu comprobante y un email de contacto. El beneficio fundador se validará de buena fe cuando Studio abra su etapa comercial.
+          </div>
+
+          <div className="pt-2">
+            <Button asChild size="lg" className="rounded-full px-8 gap-2 text-xs font-bold shadow-md">
               <Link to="/apoyar">
-                <Heart className="h-4 w-4 fill-current text-pink-300" /> Convidar un Café / Apoyar el Proyecto
+                <Heart className="h-4 w-4 fill-current text-pink-300" /> Ver Tiers de Mecenazgo en RevenueCat
               </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="gap-2 text-xs rounded-full px-6">
-              <a href="https://ia.apliarte.com" target="_blank" rel="noopener noreferrer">
-                <Sparkles className="h-4 w-4 text-amber-500" /> Ir a ia.apliarte.com
-              </a>
             </Button>
           </div>
         </div>
       </section>
 
+      {/* NOTA PERSONAL DEL AUTOR (6 IDIOMAS) */}
+      <AuthorPersonalNote />
+
+      {/* COMPARTE EL UNIVERSO */}
+      <SocialShareBar />
+
+      {/* FOOTER OFICIAL */}
       <SiteFooter />
     </div>
   );

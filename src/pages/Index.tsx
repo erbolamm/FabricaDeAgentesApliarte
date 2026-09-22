@@ -14,7 +14,6 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import {
   Sparkles,
-  Key,
   Copy,
   Zap,
   Github,
@@ -97,8 +96,8 @@ export function Index() {
             </Button>
 
             <Button size="lg" variant="outline" asChild className="rounded-full px-6 gap-2 text-sm font-semibold">
-              <Link to="/conectores">
-                <Key className="h-4 w-4 text-primary" /> Conectar tu IA (BYOK)
+              <Link to="/crear">
+                <Sparkles className="h-4 w-4 text-amber-500" /> Taller de Prompts
               </Link>
             </Button>
 

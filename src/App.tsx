@@ -8,7 +8,6 @@ import { AuthProvider } from "./context/AuthContext";
 import { Index } from "./pages/Index";
 import { Catalog } from "./pages/Catalog";
 import { AgentDetail } from "./pages/AgentDetail";
-import { Connectors } from "./pages/Connectors";
 import { Pricing } from "./pages/Pricing";
 import { MyExecutions } from "./pages/MyExecutions";
 import { CreatorAgentForm } from "./pages/CreatorAgentForm";
@@ -41,7 +40,7 @@ const App = () => (
 
             <Route path="/agentes" element={<Catalog />} />
             <Route path="/agentes/:slug" element={<AgentDetail />} />
-            <Route path="/conectores" element={<Connectors />} />
+            <Route path="/conectores" element={<Catalog />} />
             <Route path="/apoyar" element={<Pricing />} />
             <Route path="/precios" element={<Pricing />} />
             <Route path="/mis-ejecuciones" element={<MyExecutions />} />

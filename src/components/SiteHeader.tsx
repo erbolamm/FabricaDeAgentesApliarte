@@ -3,7 +3,6 @@ import { Link, NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
-  Key,
   Heart,
   Github,
   Sparkles,
@@ -87,19 +86,6 @@ export const SiteHeader = () => {
           </li>
           <li>
             <NavLink
-              to="/conectores"
-              className={({ isActive }) =>
-                `flex items-center gap-1.5 ${
-                  isActive ? "text-foreground font-bold" : "hover:text-foreground transition-colors"
-                }`
-              }
-            >
-              <Key className="h-3.5 w-3.5 text-primary" />
-              <span>Conectores IA</span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
               to="/apoyar"
               className={({ isActive }) =>
                 `flex items-center gap-1.5 ${
@@ -139,9 +125,9 @@ export const SiteHeader = () => {
             asChild
             className="rounded-full text-xs h-8 px-3.5 gap-1.5 shadow-sm font-bold bg-primary hover:bg-primary/90"
           >
-            <Link to="/conectores">
-              <Key className="h-3 w-3" />
-              <span>Conectar IA</span>
+            <Link to="/agentes">
+              <Sparkles className="h-3 w-3" />
+              <span>Catálogo</span>
             </Link>
           </Button>
 
@@ -187,15 +173,6 @@ export const SiteHeader = () => {
             >
               <Sparkles className="h-4 w-4 text-amber-500" />
               <span>Taller & Creador</span>
-            </Link>
-
-            <Link
-              to="/conectores"
-              onClick={closeMobileMenu}
-              className="flex items-center gap-2 p-2.5 rounded-xl bg-card border border-border/60 hover:border-primary/40 font-medium"
-            >
-              <Key className="h-4 w-4 text-primary" />
-              <span>Conectores BYOK</span>
             </Link>
 
             <Link

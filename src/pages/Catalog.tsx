@@ -44,7 +44,7 @@ export function Catalog() {
               Catálogo de Prompts Open Source
             </h1>
             <p className="mt-3 text-base text-muted-foreground">
-              {agents.length} plantillas de prompt listas para personalizar, copiar con 1-click o ejecutar directamente con tus conectores de IA.
+              {agents.length} plantillas de prompts y skills listas para personalizar, copiar con 1-click o exportar a tus plataformas de IA preferidas (Gemini, ChatGPT, Claude o Mistral).
             </p>
           </header>
 

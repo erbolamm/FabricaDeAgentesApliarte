@@ -63,9 +63,9 @@ export class LocalExecutionsService implements ExecutionsService {
         execution.output = result.text;
         execution.modelUsed = result.model;
       } else {
-        // Modo sin conector: devuelve el prompt renderizado y un recordatorio
+        // Modo sin conector: devuelve el prompt renderizado
         execution.status = "completed";
-        execution.output = `### 📋 Prompt Generado y Listo para Copiar:\n\n${renderedPrompt}\n\n*(Conecta tu API key de DeepSeek, Gemini, OpenAI o Claude en la pestaña 'Conectores IA' para ejecutarlo automáticamente aquí).*`;
+        execution.output = `### 📋 Prompt Generado y Listo para Copiar:\n\n${renderedPrompt}`;
       }
     } catch (err: unknown) {
       execution.status = "failed";

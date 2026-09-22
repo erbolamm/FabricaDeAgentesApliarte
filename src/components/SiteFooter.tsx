@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Github, Heart, Key, Mail, Sparkles, ExternalLink } from "lucide-react";
+import { Github, Heart, Mail, Sparkles, ExternalLink } from "lucide-react";
 import { generateFeedbackMailto } from "@/lib/feedback";
 
 export const SiteFooter = () => {
@@ -87,11 +87,6 @@ export const SiteFooter = () => {
               >
                 <Github className="h-3 w-3" /> GitHub Repo
               </a>
-            </li>
-            <li>
-              <Link to="/conectores" className="hover:text-foreground flex items-center gap-1">
-                <Key className="h-3 w-3 text-primary" /> Conectar tu IA (BYOK)
-              </Link>
             </li>
             <li>
               <Link to="/crear" className="hover:text-foreground flex items-center gap-1">

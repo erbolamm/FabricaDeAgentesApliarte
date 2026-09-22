@@ -1,9 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useAgentBySlug } from "@/hooks/useAgents";
-import { useCreateExecution } from "@/hooks/useExecutions";
-import { aiConnectorsService, AI_PROVIDERS } from "@/services";
-import type { AIProviderId } from "@/types";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -18,11 +15,9 @@ import { CommunityBanner } from "@/components/CommunityBanner";
 import {
   Copy,
   Check,
-  Play,
   Sparkles,
   Download,
   ArrowLeft,
-  Key,
   Bot,
   Layers,
   HelpCircle,
@@ -34,19 +29,10 @@ import {
 export function AgentDetail() {
   const { slug } = useParams<{ slug: string }>();
   const { data: agent, isLoading } = useAgentBySlug(slug);
-  const createExecution = useCreateExecution();
 
   const [inputs, setInputs] = useState<Record<string, string>>({});
   const [copied, setCopied] = useState(false);
-  const [output, setOutput] = useState<string | null>(null);
-  const [isRunning, setIsRunning] = useState(false);
   const [activeTab, setActiveTab] = useState<string>("guide");
-
-  const connections = useMemo(() => aiConnectorsService.getConnections(), []);
-  const defaultProviderId = useMemo(() => aiConnectorsService.getDefaultProviderId(), []);
-  const [selectedProvider, setSelectedProvider] = useState<AIProviderId | "">(
-    defaultProviderId || (connections.length > 0 ? connections[0].providerId : ""),
-  );
 
   // Inicializar inputs con valores por defecto
   useEffect(() => {
@@ -84,30 +70,6 @@ ${renderedUserPrompt}`;
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleRun = async () => {
-    if (!agent) return;
-    setIsRunning(true);
-    setActiveTab("result");
-
-    try {
-      const res = await createExecution.mutateAsync({
-        agent,
-        inputs,
-        providerId: (selectedProvider as AIProviderId) || undefined,
-      });
-
-      if (res.output) {
-        setOutput(res.output);
-      } else if (res.error) {
-        setOutput(`❌ Error en la ejecución: ${res.error}`);
-      }
-    } catch (err: unknown) {
-      setOutput(`❌ Error: ${err instanceof Error ? err.message : String(err)}`);
-    } finally {
-      setIsRunning(false);
-    }
-  };
-
   const handleExportMarkdown = () => {
     if (!agent) return;
     const content = `# ${agent.name}
@@ -125,8 +87,7 @@ ${agent.systemPrompt}
 \`\`\`markdown
 ${renderedUserPrompt}
 \`\`\`
-
-${output ? `## Resultado Generado\n\n${output}` : ""}`;
+`;
 
     const blob = new Blob([content], { type: "text/markdown;charset=utf-8;" });
     const url = URL.createObjectURL(blob);
@@ -266,50 +227,6 @@ ${output ? `## Resultado Generado\n\n${output}` : ""}`;
                     )}
                   </div>
                 ))}
-
-                {/* BYOK Conector selector (opcional) */}
-                <div className="pt-4 border-t border-border/60 space-y-3">
-                  <div className="flex items-center justify-between">
-                    <label className="text-xs font-semibold flex items-center gap-1.5">
-                      <Key className="h-3.5 w-3.5 text-primary" />
-                      <span>Ejecutar con tu IA (Opcional):</span>
-                    </label>
-                    <Link
-                      to="/conectores"
-                      className="text-[11px] text-primary hover:underline flex items-center gap-1"
-                    >
-                      Añadir claves
-                    </Link>
-                  </div>
-
-                  <div className="flex gap-2">
-                    <select
-                      value={selectedProvider}
-                      onChange={(e) => setSelectedProvider(e.target.value as AIProviderId)}
-                      className="w-full rounded-md border border-input bg-background px-3 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-primary"
-                    >
-                      <option value="">-- Elige un proveedor conectado --</option>
-                      {connections.map((c) => {
-                        const provider = AI_PROVIDERS.find((p) => p.id === c.providerId);
-                        return (
-                          <option key={c.providerId} value={c.providerId}>
-                            {provider?.name || c.providerId} ({c.selectedModel})
-                          </option>
-                        );
-                      })}
-                    </select>
-
-                    <Button
-                      onClick={handleRun}
-                      disabled={!selectedProvider || isRunning}
-                      size="sm"
-                      className="gap-1.5 text-xs shrink-0"
-                    >
-                      <Play className="h-3.5 w-3.5" />
-                      {isRunning ? "Ejecutando..." : "Ejecutar"}
-                    </Button>
-                  </div>
-                </div>
               </CardContent>
             </Card>
           </div>
@@ -370,18 +287,6 @@ ${output ? `## Resultado Generado\n\n${output}` : ""}`;
                     {renderedUserPrompt}
                   </pre>
                 </div>
-
-                {/* Salida Generada (si ejecutó con IA) */}
-                {output && (
-                  <div className="pt-2 border-t border-border/60">
-                    <span className="text-xs font-bold text-foreground block mb-1.5">
-                      Respuesta de la IA Conectada:
-                    </span>
-                    <pre className="rounded-xl bg-primary/5 p-4 font-mono text-xs whitespace-pre-wrap border border-primary/20 max-h-60 overflow-y-auto text-foreground">
-                      {output}
-                    </pre>
-                  </div>
-                )}
               </CardContent>
             </Card>
           </div>

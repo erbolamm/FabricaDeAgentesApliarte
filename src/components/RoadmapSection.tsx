@@ -24,8 +24,8 @@ const PHASES: Phase[] = [
     statusLabel: "Listo ✅",
     badgeColor: "border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
     icon: CheckCircle2,
-    title: "Fase 1 — Identidad, Conectores BYOK y Privacidad",
-    description: "Ejecución directa desde el navegador (DeepSeek, Claude, GPT, Gemini, Groq, Ollama) sin servidores intermediarios.",
+    title: "Fase 1 — Identidad, Arquitectura Abierta y Privacidad",
+    description: "Almacén 100% libre de prompts y skills client-side sin registro, sin rastreadores y sin servidores intermediarios.",
   },
   {
     status: "in_progress",
